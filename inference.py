@@ -117,10 +117,7 @@ class DiscreteDistribution(dict):
             if choice < cumulative:
                 return key
 
-        #浮点误差可能让 choice 非常接近 total，这时返回最后一个正权重键。
-        for key, value in reversed(list(self.items())):
-            if value > 0:
-                return key
+        
 
 
 class InferenceModule:
